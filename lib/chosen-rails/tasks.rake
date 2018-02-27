@@ -6,6 +6,6 @@ task 'assets:precompile' do
   Dir['public/assets/chosen-*'].each do |file|
     next unless file =~ fingerprint
     nondigest = file.sub fingerprint, '.'
-    FileUtils.copy_entry file, nondigest, remove_destination: true
+    FileUtils.cp file, nondigest, verbose: true
   end
 end

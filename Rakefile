@@ -9,7 +9,5 @@ task 'update-chosen', 'repository_url', 'branch' do |task, args|
   files = SourceFile.new
   files.fetch remote, branch
   files.eject_javascript_class_from_closure
-  files.remove_compass_lines
-  files.add_depend_on_asset
   files.cleanup
 end
